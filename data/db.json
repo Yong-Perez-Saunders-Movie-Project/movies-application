@@ -1,36 +1,36 @@
 {
   "movies": [
     {
-      "id": 1,
-      "title": "Mean Girls",
-      "genre": "Comedy",
-      "director": "Mark Waters",
-      "year": "2004",
-      "rating": 5
-    },
-    {
-      "id": 2,
-      "title": "The Avengers",
-      "genre": "Superhero",
-      "director": "Anthony Russo, Joe Russo, Joss Whedon",
-      "year": "2012",
-      "rating": 5
-    },
-    {
       "id": 3,
-      "title": "Blade 2",
-      "genre": "Superhero",
-      "director": "Guillermo del Toro",
-      "year": "2002",
-      "rating": 5
+      "title": "bob",
+      "genre": "horror",
+      "director": "yong",
+      "year": "1921",
+      "rating": "1"
     },
     {
-      "title": "amir",
-      "genre": "action",
+      "title": "bob",
+      "genre": "horror",
       "director": "amir",
-      "year": "2022",
+      "year": "1921",
       "rating": "1",
       "id": 4
+    },
+    {
+      "title": "bob",
+      "genre": "comedy",
+      "director": "amir",
+      "year": "1921",
+      "rating": "1",
+      "id": 5
+    },
+    {
+      "title": "bob",
+      "genre": "horror",
+      "director": "yong",
+      "year": "1921",
+      "rating": "1",
+      "id": 6
     }
   ]
 }
