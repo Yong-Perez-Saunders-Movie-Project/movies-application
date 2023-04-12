@@ -105,6 +105,8 @@ fetch('http://localhost:3000/movies')
             deleteButton.textContent = 'Delete';
             const editButton = document.createElement('button');
             editButton.textContent = 'Edit';
+            deleteButton.classList.add('delete');
+            editButton.classList.add('edit');
             cardElement.appendChild(titleElement);
             cardElement.appendChild(directorElement);
             cardElement.appendChild(yearElement);
