@@ -1,22 +1,32 @@
 "use strict";
 
-function createMovie() {
-    let title = prompt("What is the title of your movie?");
-    let rating = prompt("Who is the rating of this movie?")
-    return {title, rating};
-}
+// function createMovie() {
+//     let title = prompt("What is the title of your movie?");
+//     let rating = prompt("Who is the rating of this movie?")
+//     return {title, rating};
+// }
 
 
 // fetch("http://localhost:3000/movies")
 //     .then(response => response.json())
 //     .then(data => console.log(data))
 //     .catch(error => console.error(error));
+const loadingElement = document.querySelector('.loading');
+loadingElement.style.display = 'flex';
+
 fetch('http://localhost:3000/movies')
     .then(response => response.json())
     .then(data => {
+        loadingElement.style.display = 'none';
         const jsonDataElement = document.getElementById('json-data');
+        // jsonDataElement.innerHTML = `<div class="loading"><img src="img/loading.gif" alt="loading"></div>`;
+        // console.log('loading complete');
         data.forEach(movie => {
             const cardElement = document.createElement('div');
+            // cardElement.setAttribute(
+            //     'style',
+            //     'width: 300px; height: 200px; margin: 1rem; box-shadow: 0 4px 5px rgba(0,0,0,0.2); overflow: hidden; '
+            // )
             cardElement.classList.add('card');
             const titleElement = document.createElement('h2');
             titleElement.textContent = movie.title;
@@ -75,7 +85,6 @@ function hidePopUp() {
     popUpScreen.style.display = "none";
 }
 // Add click event listener to OK button
-
 okBtn.addEventListener("click", function() {
     const title = titleInput.value;
     const genre = genreInput.value;
@@ -91,7 +100,6 @@ okBtn.addEventListener("click", function() {
             year: year,
             rating: rating
         };
-
         // Perform action with the movie details, e.g., send them to the server using fetch
         fetch("http://localhost:3000/movies", {
             method: 'POST',
