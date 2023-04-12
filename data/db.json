@@ -3,41 +3,42 @@
     {
       "id": 1,
       "title": "Mean Girls",
+      "genre": "Comedy",
+      "director": "Mark Waters",
+      "year": "2004",
       "rating": 5
     },
     {
       "id": 2,
-      "title": "Avengers",
+      "title": "The Avengers",
+      "genre": "Superhero",
+      "director": "Anthony Russo, Joe Russo, Joss Whedon",
+      "year": "2012",
       "rating": 5
     },
     {
       "id": 3,
       "title": "Blade 2",
+      "genre": "Superhero",
+      "director": "Guillermo del Toro",
+      "year": "2002",
       "rating": 5
     },
     {
-      "title": "a",
-      "genre": "a",
-      "director": "a",
-      "year": "2004",
-      "rating": "3",
+      "title": "amir",
+      "genre": "action",
+      "director": "amir",
+      "year": "2022",
+      "rating": "1",
       "id": 4
     },
     {
-      "title": "a",
-      "genre": "a",
-      "director": "a",
-      "year": "2004",
-      "rating": "3",
-      "id": 5
-    },
-    {
-      "title": "b",
-      "genre": "b",
-      "director": "b ",
-      "year": "1000",
+      "title": "jaylens flight",
+      "genre": "horror",
+      "director": "yong",
+      "year": "1912",
       "rating": "1",
-      "id": 6
+      "id": 5
     }
   ]
 }
