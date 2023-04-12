@@ -1,3 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+.loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading img {
+    width: 300px;
+    height: 300px;
+}
+#json-data {
+    background-color: #22254b;
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card {
+    width: 300px;
+    height: 200px;
+    margin: 1rem;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -10,22 +49,19 @@
     justify-content: center;
     align-items: center;
 }
-
 .modal-content {
     background: #fff;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
 }
-
 input[type="text"],
 input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
 }
-
-button {
+#addMovieBtn {
     padding: 10px 20px;
     margin: 10px;
     background: #007bff;
@@ -33,9 +69,33 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
+}
+#okBtn {
+    padding: 10px 20px;
+    margin: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#cancelBtn {
+    padding: 10px 20px;
+    margin: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-button:hover {
+#okBtn:hover {
     background: #0056b3;
 }
+#addMovieBtn:hover {
+    background: #0056b3;
+}
+#cancelBtn:hover{
+    background: #0056b3;
+}
+
