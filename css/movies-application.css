@@ -30,12 +30,13 @@
 }
 .card {
     width: 300px;
-    height: 300px;
+    height: 660px;
     margin: 1rem;
     box-shadow: 0 4px 5px rgba(0,0,0,0.2);
     text-align: center;
     display: flex;
     justify-content: center;
+
 }
 
 .modal {
@@ -49,6 +50,7 @@
     color: #fff;
     justify-content: center;
     align-items: center;
+    background-color: #02898e;
 }
 .modal-content {
     background: #fff;
@@ -251,4 +253,27 @@ section #text span {
 
 .sec::before{
     content: '';
+}
+
+#goToPageButton {
+    padding: 10px 10px;
+    margin: 0;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+}
+#goToPageButton:active {
+    transform: scale(0.98);
+}
+#goToPageButton:hover {
+    background: #0056b3;
+}
+.movieImages {
+    width: 300px;
+    height: 350px;
+
+    object-fit: cover;
 }
