@@ -1,6 +1,6 @@
-* {
-    box-sizing: border-box;
-}
+/** {*/
+/*    box-sizing: border-box;*/
+/*}*/
 .loading {
     display: none;
     position: fixed;
@@ -19,7 +19,7 @@
     height: 300px;
 }
 #json-data {
-    background-color: #22254b;
+    background-color: #02898e;
     font-family: 'Poppins', sans-serif;
     margin:0;
     height: 100vh;
@@ -62,22 +62,22 @@ input[type="number"] {
     padding: 10px;
     margin-bottom: 10px;
 }
-#addMovieBtn {
-    padding: 10px 20px;
-    margin: 10px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-#addMovieBtn:active {
-    transform: scale(0.98);
-}
+/*#addMovieBtn {*/
+/*    padding: 10px 20px;*/
+/*    margin: 10px;*/
+/*    background: #007bff;*/
+/*    color: #fff;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+/*#addMovieBtn:active {*/
+/*    transform: scale(0.98);*/
+/*}*/
 #okBtn {
     padding: 10px 20px;
     margin: 10px;
-    background: #007bff;
+    background: #094b65;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -86,7 +86,7 @@ input[type="number"] {
 #cancelBtn {
     padding: 10px 20px;
     margin: 10px;
-    background: #007bff;
+    background: #094b65;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -94,57 +94,161 @@ input[type="number"] {
 }
 
 #okBtn:hover {
-    background: #0056b3;
+    background: #02898e;
 }
-#addMovieBtn:hover {
-    background: #0056b3;
-}
+/*#addMovieBtn:hover {*/
+/*    background: #0056b3;*/
+/*}*/
 #cancelBtn:hover{
-    background: #0056b3;
+    background: #02898e;
 }
 
+/*.delete {*/
+/*    background-color: red;*/
+/*    padding: 10px 20px;*/
+/*    margin: 4px;*/
+/*    cursor: pointer;*/
+/*    border: 0;*/
+/*    border-radius: 5px;*/
+/*    color: #fff;*/
+/*    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);*/
 
-.delete {
-    background-color: red;
-    padding: 10px 20px;
-    margin: 4px;
-    cursor: pointer;
-    border: 0;
-    border-radius: 5px;
-    color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+/*}*/
+/*.edit {*/
+/*    background-color: cadetblue;*/
+/*    padding: 10px 20px;*/
+/*    margin: 4px;*/
+/*    cursor: pointer;*/
+/*    border: 0;*/
+/*    border-radius: 5px;*/
+/*    color: #fff;*/
+/*    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);*/
+/*}*/
+/*.delete:hover {*/
+/*    background: palevioletred;*/
+/*    color: black;*/
+
+/*}*/
+/*.edit:hover {*/
+/*    background: steelblue;*/
+/*    color: black;*/
+/*}*/
+
+/*.edit:active {*/
+/*    transform: scale(0.98);*/
+/*}*/
+/*.delete:active {*/
+/*    transform: scale(0.98);*/
+/*}*/
+/*.edit:focus {*/
+/*    outline: 0;*/
+/*}*/
+/*.delete:focus {*/
+/*    outline: 0;*/
+/*}*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Rancho&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: #fff;
+    min-height: 100vh;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+#header .logo {
+    color: #094b65;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section ::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #094b65,transparent);
+    z-index: 10;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section #text {
+    position: absolute;
+    color: #094b65;
+    font-size: 10vh;
+    text-align: center;
+    line-height: 0.55em;
+    font-family: 'Rancho', cursive;
+    transform: translateY(-50%);
 
 }
-.edit {
-    background-color: cadetblue;
-    padding: 10px 20px;
-    margin: 4px;
-    cursor: pointer;
-    border: 0;
-    border-radius: 5px;
-    color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-}
-.delete:hover {
-    background: palevioletred;
-    color: black;
 
-}
-.edit:hover {
-    background: steelblue;
-    color: black;
+section #text span {
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
 }
 
-.edit:active {
-    transform: scale(0.98);
-}
-.delete:active {
-    transform: scale(0.98);
-}
-.edit:focus {
-    outline: 0;
-}
-.delete:focus {
-    outline: 0;
+#addMovieBtn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    background: #ffffff;
+    color: #094b65;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translateY(100px);
 }
 
+.sec{
+    position: relative;
+    padding: 100px;
+    background: #094b65;
+}
+
+.sec::before{
+    content: '';
+}
