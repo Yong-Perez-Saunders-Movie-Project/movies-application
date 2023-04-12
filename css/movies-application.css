@@ -103,49 +103,49 @@ input[type="number"] {
     background: #02898e;
 }
 
-/*.delete {*/
-/*    background-color: red;*/
-/*    padding: 10px 20px;*/
-/*    margin: 4px;*/
-/*    cursor: pointer;*/
-/*    border: 0;*/
-/*    border-radius: 5px;*/
-/*    color: #fff;*/
-/*    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);*/
+.delete {
+    background-color: red;
+    padding: 10px 20px;
+    margin: 4px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 
-/*}*/
-/*.edit {*/
-/*    background-color: cadetblue;*/
-/*    padding: 10px 20px;*/
-/*    margin: 4px;*/
-/*    cursor: pointer;*/
-/*    border: 0;*/
-/*    border-radius: 5px;*/
-/*    color: #fff;*/
-/*    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);*/
-/*}*/
-/*.delete:hover {*/
-/*    background: palevioletred;*/
-/*    color: black;*/
+}
+.edit {
+    background-color: cadetblue;
+    padding: 10px 20px;
+    margin: 4px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+.delete:hover {
+    background: palevioletred;
+    color: black;
 
-/*}*/
-/*.edit:hover {*/
-/*    background: steelblue;*/
-/*    color: black;*/
-/*}*/
+}
+.edit:hover {
+    background: steelblue;
+    color: black;
+}
 
-/*.edit:active {*/
-/*    transform: scale(0.98);*/
-/*}*/
-/*.delete:active {*/
-/*    transform: scale(0.98);*/
-/*}*/
-/*.edit:focus {*/
-/*    outline: 0;*/
-/*}*/
-/*.delete:focus {*/
-/*    outline: 0;*/
-/*}*/
+.edit:active {
+    transform: scale(0.98);
+}
+.delete:active {
+    transform: scale(0.98);
+}
+.edit:focus {
+    outline: 0;
+}
+.delete:focus {
+    outline: 0;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Rancho&display=swap');
