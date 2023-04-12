@@ -93,6 +93,11 @@ fetch('http://localhost:3000/movies')
             const cardElement = document.createElement('div');
 
             cardElement.classList.add('card');
+            const img = document.createElement('img');
+            img.src = movie.img;
+            img.classList.add('movieImages');
+
+
             const titleElement = document.createElement('h2');
             titleElement.textContent = movie.title;
             const directorElement = document.createElement('p');
@@ -107,6 +112,7 @@ fetch('http://localhost:3000/movies')
             editButton.textContent = 'Edit';
             deleteButton.classList.add('delete');
             editButton.classList.add('edit');
+            cardElement.appendChild(img);
             cardElement.appendChild(titleElement);
             cardElement.appendChild(directorElement);
             cardElement.appendChild(yearElement);
@@ -233,3 +239,7 @@ window.addEventListener('scroll', function(){
 })
 
 
+document.getElementById("goToPageButton").addEventListener("click", function() {
+    // Redirect to the other page
+    window.location.href = "movie-api.html";
+});
