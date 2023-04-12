@@ -93,9 +93,7 @@ fetch('http://localhost:3000/movies')
             const cardElement = document.createElement('div');
 
             cardElement.classList.add('card');
-            const img = document.createElement('img');
-            img.src = movie.img;
-            img.classList.add('movieImages');
+
 
 
             const titleElement = document.createElement('h2');
@@ -112,7 +110,6 @@ fetch('http://localhost:3000/movies')
             editButton.textContent = 'Edit';
             deleteButton.classList.add('delete');
             editButton.classList.add('edit');
-            cardElement.appendChild(img);
             cardElement.appendChild(titleElement);
             cardElement.appendChild(directorElement);
             cardElement.appendChild(yearElement);
@@ -122,7 +119,6 @@ fetch('http://localhost:3000/movies')
             cardElement.appendChild(editButton);
 
 
-            deleteButton.addEventListener("click", () => {
 
                 deleteButton.addEventListener('click', () => {
                     fetch(`http://localhost:3000/movies/${movie.id}`, {
@@ -136,7 +132,7 @@ fetch('http://localhost:3000/movies')
                             }
                         })
                 });
-            })
+
             editButton.addEventListener("click", function () {
                 // Get the current movie data
                 const title = movie.title;
@@ -239,7 +235,3 @@ window.addEventListener('scroll', function(){
 })
 
 
-document.getElementById("goToPageButton").addEventListener("click", function() {
-    // Redirect to the other page
-    window.location.href = "movie-api.html";
-});
