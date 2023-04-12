@@ -21,11 +21,30 @@ fetch('http://localhost:3000/movies')
             yearElement.textContent = 'Year: ' + movie.year;
             const ratingElement = document.createElement('p');
             ratingElement.textContent = 'Rating: ' + movie.rating;
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
             cardElement.appendChild(titleElement);
             cardElement.appendChild(directorElement);
             cardElement.appendChild(yearElement);
             cardElement.appendChild(ratingElement);
             jsonDataElement.appendChild(cardElement);
+            cardElement.appendChild(deleteButton);
+
+            deleteButton.addEventListener("click", () => {
+
+                deleteButton.addEventListener('click', () => {
+                    fetch(`http://localhost:3000/movies/${movie.id}`, {
+                        method: 'DELETE',
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                cardElement.remove();
+                            } else {
+                                console.error('error')
+                            }
+                        })
+                });
+            })
         });
     });
 //
