@@ -11,77 +11,72 @@ const yearInput = document.getElementById("yearInput");
 const ratingInput = document.getElementById("ratingInput");
 const okBtn = document.getElementById("okBtn");
 const cancelBtn = document.getElementById("cancelBtn");
-let addMovieBtn= document.getElementById('addMovieBtn');
-
+let addMovieBtn = document.getElementById('addMovieBtn');
 
 // Show the pop-up screen
-    function showPopUp() {
-        popUpScreen.style.display = "flex";
-    }
+function showPopUp() {
+    popUpScreen.style.display = "flex";
+}
 
 // Hide the pop-up screen
-    function hidePopUp() {
-        popUpScreen.style.display = "none";
-    }
+function hidePopUp() {
+    popUpScreen.style.display = "none";
+}
 
 // Add click event listener to OK button
-    okBtn.addEventListener("click", function () {
-        const title = titleInput.value;
-        const genre = genreInput.value;
-        const director = directorInput.value;
-        const year = yearInput.value;
-        const rating = ratingInput.value;
-        if (title && genre && director && year && rating) {
+okBtn.addEventListener("click", function () {
+    const title = titleInput.value;
+    const genre = genreInput.value;
+    const director = directorInput.value;
+    const year = yearInput.value;
+    const rating = ratingInput.value;
+    if (title && genre && director && year && rating) {
 
-            // Create a JSON object with the movie details
-            const movie = {
-                title: title,
-                genre: genre,
-                director: director,
-                year: year,
-                rating: rating
-            };
+        // Create a JSON object with the movie details
+        const movie = {
+            title: title,
+            genre: genre,
+            director: director,
+            year: year,
+            rating: rating
+        };
 
-            // Perform action with the movie details, e.g., send them to the server using fetch
-            fetch("http://localhost:3000/movies", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(movie)
+        // Perform action with the movie details, e.g., send them to the server using fetch
+        fetch("http://localhost:3000/movies", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(movie)
+        })
+            .then(response => {
+                if (response.ok) {
+                    // successfully added response
+                    console.log('Movie added successfully');
+                    hidePopUp();
+                } else {
+                    // failed to add response
+                    console.error('Failed to add movie');
+                }
             })
-                .then(response => {
-                    if (response.ok) {
-                        // successfully added response
-                        console.log('Movie added successfully');
-                        hidePopUp();
-                    } else {
-                        // failed to add response
-                        console.error('Failed to add movie');
-                    }
-                })
-                .catch(error => {
-                    // display an error message
-                    console.error('Failed to add movie:', error);
-                });
-        } else {
-            // message to fill in all fields
-            alert("Please fill in all the fields.");
-        }
-    });
+            .catch(error => {
+                // display an error message
+                console.error('Failed to add movie:', error);
+            });
+    } else {
+        // message to fill in all fields
+        alert("Please fill in all the fields.");
+    }
+});
 // Add click event listener to Cancel button
-    cancelBtn.addEventListener("click", function () {
-        hidePopUp();
-        // Hide the pop-up screen
-    });
+cancelBtn.addEventListener("click", function () {
+    hidePopUp();
+    // Hide the pop-up screen
+});
 // Add click event listener to Add Movie button
-    addMovieBtn.addEventListener("click", function () {
-        showPopUp(); // Show the pop-up screen when Add Movie button is clicked
-    });
-
-
-
-
+addMovieBtn.addEventListener("click", function () {
+    showPopUp(); // Show the pop-up screen when Add Movie button is clicked
+});
 
 fetch('http://localhost:3000/movies')
     .then(response => response.json())
@@ -93,7 +88,6 @@ fetch('http://localhost:3000/movies')
             const cardElement = document.createElement('div');
 
             cardElement.classList.add('card');
-
 
 
             const titleElement = document.createElement('h2');
@@ -118,20 +112,18 @@ fetch('http://localhost:3000/movies')
             cardElement.appendChild(deleteButton);
             cardElement.appendChild(editButton);
 
-
-
-                deleteButton.addEventListener('click', () => {
-                    fetch(`http://localhost:3000/movies/${movie.id}`, {
-                        method: 'DELETE',
+            deleteButton.addEventListener('click', () => {
+                fetch(`http://localhost:3000/movies/${movie.id}`, {
+                    method: 'DELETE',
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            cardElement.remove();
+                        } else {
+                            console.error('error')
+                        }
                     })
-                        .then(response => {
-                            if (response.ok) {
-                                cardElement.remove();
-                            } else {
-                                console.error('error')
-                            }
-                        })
-                });
+            });
 
             editButton.addEventListener("click", function () {
                 // Get the current movie data
@@ -213,14 +205,14 @@ fetch('http://localhost:3000/movies')
         });
     });
 
-let text= document.getElementById('text');
-let bird1= document.getElementById('bird1');
-let bird2= document.getElementById('bird2');
-let rocks= document.getElementById('rocks');
-let forest= document.getElementById('forest');
-let header= document.getElementById('header');
+let text = document.getElementById('text');
+let bird1 = document.getElementById('bird1');
+let bird2 = document.getElementById('bird2');
+let rocks = document.getElementById('rocks');
+let forest = document.getElementById('forest');
+let header = document.getElementById('header');
 
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function () {
     let value = window.scrollY;
 
     text.style.top = 50 + value * -0.5 + '%';
