@@ -13,14 +13,31 @@ const okBtn = document.getElementById("okBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 let addMovieBtn = document.getElementById('addMovieBtn');
 
+const editPopUpScreen = document.getElementById("editPopUpScreen");
+const titleInput1 = document.getElementById("titleInput1");
+const genreInput1 = document.getElementById("genreInput1");
+const directorInput1 = document.getElementById("directorInput1");
+const yearInput1 = document.getElementById("yearInput1");
+const ratingInput1 = document.getElementById("ratingInput1");
+const okBtn1 = document.getElementById("okBtn1");
+const cancelBtn1 = document.getElementById("cancelBtn1");
+
 // Show the pop-up screen
 function showPopUp() {
     popUpScreen.style.display = "flex";
+
+}
+function showPopUp1() {
+    editPopUpScreen.style.display = "flex";
 }
 
 // Hide the pop-up screen
 function hidePopUp() {
     popUpScreen.style.display = "none";
+
+}
+function hidePopup1() {
+    editPopUpScreen.style.display = "none";
 }
 
 // Add click event listener to OK button
@@ -135,20 +152,20 @@ fetch('http://localhost:3000/movies')
                 const rating = movie.rating;
 
                 // Show the pop-up screen with the current movie data
-                showPopUp();
-                titleInput.value = title;
-                genreInput.value = genre;
-                directorInput.value = director;
-                yearInput.value = year;
-                ratingInput.value = rating;
+                showPopUp1();
+                titleInput1.value = title;
+                genreInput1.value = genre;
+                directorInput1.value = director;
+                yearInput1.value = year;
+                ratingInput1.value = rating;
 
                 // Add click event listener to OK button
-                okBtn.addEventListener("click", function () {
-                    const newTitle = titleInput.value;
-                    const newGenre = genreInput.value;
-                    const newDirector = directorInput.value;
-                    const newYear = yearInput.value;
-                    const newRating = ratingInput.value;
+                okBtn1.addEventListener("click", function updateMovie () {
+                    const newTitle = titleInput1.value;
+                    const newGenre = genreInput1.value;
+                    const newDirector = directorInput1.value;
+                    const newYear = yearInput1.value;
+                    const newRating = ratingInput1.value;
                     if (newTitle && newGenre && newDirector && newYear && newRating) {
 
                         // Create a JSON object with the updated movie details
@@ -177,7 +194,8 @@ fetch('http://localhost:3000/movies')
                                     directorElement.textContent = 'Director: ' + newDirector;
                                     yearElement.textContent = 'Year: ' + newYear;
                                     ratingElement.textContent = 'Rating: ' + newRating;
-                                    hidePopUp();
+                                    hidePopup1();
+                                    location.reload()
                                 } else {
                                     // Failed to update movie
                                     console.error('Failed to update movie');
@@ -195,13 +213,9 @@ fetch('http://localhost:3000/movies')
             });
 
 // Add click event listener to Cancel button
-            cancelBtn.addEventListener("click", function () {
-                hidePopUp();
+            cancelBtn1.addEventListener("click", function () {
+                hidePopup1();
                 // Hide the pop-up screen
-            });
-// Add click event listener to Add Movie button
-            addMovieBtn.addEventListener("click", function () {
-                showPopUp(); // Show the pop-up screen when Add Movie button is clicked
             });
         });
     });
