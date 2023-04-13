@@ -1,6 +1,3 @@
-/** {*/
-/*    box-sizing: border-box;*/
-/*}*/
 .loading {
     display: none;
     position: fixed;
@@ -22,16 +19,15 @@
     background-color: #02898e;
     font-family: 'Poppins', sans-serif;
     margin:0;
-    /*height: 100vh;*/
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
     padding: 100px;
-    /*background: #094b65;*/
     height: 100%;
 }
+
 .card {
     width: 300px;
     height: 300px;
@@ -56,30 +52,21 @@
     align-items: center;
     background-color: #02898e;
 }
+
 .modal-content {
     background: #fff;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
 }
+
 input[type="text"],
 input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
 }
-/*#addMovieBtn {*/
-/*    padding: 10px 20px;*/
-/*    margin: 10px;*/
-/*    background: #007bff;*/
-/*    color: #fff;*/
-/*    border: none;*/
-/*    border-radius: 5px;*/
-/*    cursor: pointer;*/
-/*}*/
-/*#addMovieBtn:active {*/
-/*    transform: scale(0.98);*/
-/*}*/
+
 #okBtn {
     padding: 10px 20px;
     margin: 10px;
@@ -89,7 +76,8 @@ input[type="number"] {
     border-radius: 5px;
     cursor: pointer;
 }
-#cancelBtn {
+#ca
+ncelBtn {
     padding: 10px 20px;
     margin: 10px;
     background: #094b65;
@@ -102,9 +90,7 @@ input[type="number"] {
 #okBtn:hover {
     background: #02898e;
 }
-/*#addMovieBtn:hover {*/
-/*    background: #0056b3;*/
-/*}*/
+
 #cancelBtn:hover{
     background: #02898e;
 }
@@ -118,8 +104,8 @@ input[type="number"] {
     border-radius: 5px;
     color: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-
 }
+
 .edit {
     background-color: cadetblue;
     padding: 10px 20px;
@@ -130,11 +116,12 @@ input[type="number"] {
     color: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 }
+
 .delete:hover {
     background: palevioletred;
     color: black;
-
 }
+
 .edit:hover {
     background: steelblue;
     color: black;
@@ -143,6 +130,7 @@ input[type="number"] {
 .edit:active {
     transform: scale(0.98);
 }
+
 .delete:active {
     transform: scale(0.98);
 }
@@ -256,9 +244,7 @@ section #text span {
 /*    height: 100%;*/
 /*}*/
 
-/*.sec::before{*/
-/*    content: '';*/
-/*}*/
+
 
 #goToPageButton {
     padding: 10px 10px;
