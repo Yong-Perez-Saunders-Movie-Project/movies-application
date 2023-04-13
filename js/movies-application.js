@@ -54,6 +54,7 @@ okBtn.addEventListener("click", function () {
                     // successfully added response
                     console.log('Movie added successfully');
                     hidePopUp();
+                    location.reload();
                 } else {
                     // failed to add response
                     console.error('Failed to add movie');
