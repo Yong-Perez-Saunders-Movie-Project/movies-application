@@ -106,8 +106,21 @@ fetch('http://localhost:3000/movies')
             const cardElement = document.createElement('div');
 
             cardElement.classList.add('card');
-
-
+            const imgElement = document.createElement('img');
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '571ce49e3dmshaa6ff679663cc54p110312jsn3dd08de4fc0e',
+                    'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
+                }
+            };
+            fetch(`https://online-movie-database.p.rapidapi.com/title/find?q=${movie.title}`, options)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    imgElement.src = data.results[0].image.url;
+                })
+            imgElement.classList.add('img');
             const titleElement = document.createElement('h2');
             titleElement.textContent = movie.title;
             const directorElement = document.createElement('p');
@@ -122,6 +135,7 @@ fetch('http://localhost:3000/movies')
             editButton.textContent = 'Edit';
             deleteButton.classList.add('delete');
             editButton.classList.add('edit');
+            cardElement.appendChild(imgElement);
             cardElement.appendChild(titleElement);
             cardElement.appendChild(directorElement);
             cardElement.appendChild(yearElement);
@@ -242,3 +256,40 @@ window.addEventListener('scroll', function () {
 })
 
 
+function addImg(title) {
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '571ce49e3dmshaa6ff679663cc54p110312jsn3dd08de4fc0e',
+            'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
+        }
+    };
+    fetch(`https://online-movie-database.p.rapidapi.com/title/find?q=${title}`, options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+
+            let movieTitle = data.results[0].
+            console.log(movieTitle)
+            let movieImage = data.results[0].image.url
+            console.log(movieImage)
+
+            fetch('http://localhost:3000/movies', {
+                // establish the method, GET is the default method.
+                method: 'POST',
+                headers: {
+                    // the server needs to know what format we are sending data n.
+                    'Content-Type': 'application/json'
+                },
+                // convert JS object to JSON object
+                body: JSON.stringify({
+                    title: movieTitle,
+                    genre: $('#genre').val(),
+                    rating: $('#rating').val(),
+                    imgUrl: movieImage
+
+                })
+            }).then(response => myMovies())
+
+        })
+}
